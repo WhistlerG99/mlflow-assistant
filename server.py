@@ -10,7 +10,7 @@ from graph import app_graph  # import your compiled graph
 from dotenv import load_dotenv
 
 load_dotenv()
-MLFLOW_URL = os.getenv("URL", "")
+MLFLOW_URL = os.getenv("MLFLOW_URL", "")
 
 app = FastAPI()
 
