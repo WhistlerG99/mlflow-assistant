@@ -1,0 +1,9 @@
+.env
+mlruns/
+data/
+mlflow_artifacts/
+*.ckpt
+*.pyc
+scratch/
+build/
+*.egg-info
