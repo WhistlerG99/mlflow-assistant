@@ -31,6 +31,7 @@ load_dotenv()
 
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4")
+MLFLOW_URL = os.getenv("MLFLOW_URL", "")
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 ml_client = MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
@@ -282,7 +283,7 @@ llm_with_tools = llm.bind_tools(TOOLS)
 # Nodes
 # -------------------------
 
-SYSTEM_PROMPT = """
+SYSTEM_PROMPT = f"""
 You are an MLflow experiment assistant.
 
 Answer questions about a run and its surrounding experiment.
@@ -290,6 +291,12 @@ Use tools when needed.
 Do not invent metrics, artifacts, or comparisons.
 When evidence is weak, say so.
 Prefer comparing runs instead of judging a run in isolation.
+Refer to all runs by their name, and not the run id.
+Include links to any runs that you reference.
+Make sure the links begin with {MLFLOW_URL}.
+Your response should be brief.
+If otherwise requested, give a diagonsis followed by suggested actions for improvement.
+Format your response so that there is a clear delineation between sections.
 """.strip()
 
 
