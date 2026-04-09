@@ -1,0 +1,7 @@
+fastapi
+langchain_core
+langgraph
+langchain_openai
+python-dotenv
+mlflow
+matplotlib

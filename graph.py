@@ -295,7 +295,7 @@ Refer to all runs by their name, and not the run id.
 Include links to any runs that you reference.
 Make sure the links begin with {MLFLOW_URL}.
 Your response should be brief.
-If otherwise requested, give a diagonsis followed by suggested actions for improvement.
+Unless otherwise requested, give a diagonsis followed by suggested actions for improvement.
 Format your response so that there is a clear delineation between sections.
 """.strip()
 

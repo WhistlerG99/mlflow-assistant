@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MLflow Agent Chat
-// @match        https://*/*
+// @match        https://<MLFLOW_URL>/*
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  const AGENT_URL = "<SERVER_URL>/chat";
+  const AGENT_URL = "<ASSISTANT_URL>/chat";
 
   const DEFAULT_PANEL_WIDTH = 420;
   const MIN_PANEL_WIDTH = 320;
